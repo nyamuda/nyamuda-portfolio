@@ -31,7 +31,9 @@
                 </mdb-card>
             </mdb-row>
         </mdb-container>
-
+        <div id="proj-title">
+            <p>Projects</p>
+        </div>
 
 
         <div class="proj1">
@@ -104,6 +106,64 @@
         </div>
 
 
+        <div id="skills-title">
+            <p>Skills</p>
+        </div>
+
+        <div class="skill-container">
+
+            <div class="my-skills">
+                <ul>
+                    <li>JavaScript(ES6+)</li>
+                    <li>CSS3</li>
+                    <li>HTML5</li>
+                    <li>Vue.js</li>
+                </ul>
+            </div>
+            <div class="my-skills">
+                <ul>
+                    <li>Git and GitHub</li>
+                    <li>jQuery</li>
+                    <li>Restful API's</li>
+                    <li>NPM</li>
+                </ul>
+            </div>
+
+
+        </div>
+
+        <div id="contact">
+
+            <mdb-container>
+                <mdb-jumbotron class="text-center hoverable">
+                    <form>
+                        <p class="h4 text-center mb-4">Get in Touch</p>
+                        <div class="grey-text">
+                            <mdb-input label="Your name" icon="user" group type="text" validate error="wrong" success="right" />
+                            <mdb-input label="Your email" icon="envelope" group type="email" validate error="wrong" success="right" />
+                            <mdb-input label="Subject" icon="tag" group type="text" validate error="wrong" success="right" />
+                            <mdb-textarea :rows="2" label="Your message" icon="pencil" />
+                        </div>
+                        <div class="text-center">
+                            <mdb-btn outline="secondary">Send
+                                <mdb-icon far icon="paper-plane" class="ml-1" />
+                            </mdb-btn>
+                        </div>
+                    </form>
+                </mdb-jumbotron>
+            </mdb-container>
+
+            <div class="email">
+                <p>ptnrlab@gmail.com</p>
+                <p>+27815896615</p>
+
+            </div>
+
+
+
+        </div>
+
+
 
 
     </div>
@@ -129,7 +189,8 @@
         mdbBtn,
         mdbView,
         mdbMask,
-        mdbIcon
+        mdbIcon,
+        mdbInput,
     } from 'mdbvue';
     export default {
         name: 'CardProPage',
@@ -150,7 +211,8 @@
             mdbBtn,
             mdbView,
             mdbMask,
-            mdbIcon
+            mdbIcon,
+            mdbInput,
         }
     }
 
@@ -186,6 +248,23 @@
 
     }
 
+    #proj-title,
+    #skills-title {
+        width: 100%;
+        position: inherit;
+        top: 4rem;
+
+
+    }
+
+    #proj-title p,
+    #skills-title p {
+        position: relative;
+        margin: auto;
+        text-align: center;
+        font-size: 2rem;
+    }
+
     .proj1 {
         margin-top: 5rem;
         clip-path: polygon(0 1%, 100% 10%, 100% 95%, 0 99%);
@@ -193,6 +272,42 @@
         padding-top: 5rem;
         padding-bottom: 5rem;
 
+    }
+
+    #skills-title {
+        top: 2rem;
+    }
+
+    .my-skills {
+        list-style: none;
+    }
+
+    .skill-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 60%;
+        justify-content: space-around;
+        position: relative;
+        top: 5rem;
+        margin: auto;
+
+    }
+
+    #contact {
+        position: relative;
+        top: 10rem;
+    }
+    .email {
+        display: flex;
+        flex-direction: row;
+        justify-content:center;
+        width: 100%;
+        position: relative;
+        top: 1rem;
+    }
+    .email p {
+        margin: 1rem;
     }
 
 </style>
