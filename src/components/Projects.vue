@@ -12,15 +12,14 @@
                         </a>
                     </mdb-view>
                     <mdb-card-body class="text-center" cascade>
-                        <mdb-card-avatar id="img-circle" color="white" class=""><img src="https://mdbootstrap.com/img/Photos/Avatars/img(31).jpg" class="img-fluid z-depth-1 rounded-circle" alt="Responsive image"></mdb-card-avatar>
+                        <mdb-card-avatar id="img-circle" color="white" class=""><img src="../assets/resize-15981837801517789037IMG20200823090419.jpg" class="img-fluid z-depth-1 rounded-circle" alt="Responsive image"></mdb-card-avatar>
                         <mdb-card-title id="my-name">
                             <p>Pierce Nyamuda</p>
                         </mdb-card-title>
                         <h5 class="indigo-text" id="job-title">
                             <p>Front End Developer</p>
                         </h5>
-                        <mdb-card-text>Sed ut perspiciatis unde omnis iste natus sit voluptatem accusantium doloremque
-                            laudantium, totam rem aperiam.</mdb-card-text>
+                        <mdb-card-text id="intro-text">I'm looking for a team that allows me to constantly get outside my comfort zone. The Front End part of web development is where I've spent the bulk of my time learning, but I'm always excited to learn new technologies</mdb-card-text>
                         <a class="px-2 fa-lg li-ic">
                             <mdb-icon fab icon="linkedin" /></a>
                         <a class="px-2 fa-lg tw-ic">
@@ -41,7 +40,7 @@
                 <mdb-jumbotron class="text-center hoverable">
                     <mdb-row>
                         <mdb-col md="4" offsetMd="1" class="m-3">
-                            <mdb-view src="https://mdbootstrap.com/img/Photos/Others/laptop-sm.jpg" alt="Sample image for first version of blog listing">
+                            <mdb-view src="https://food.fnr.sndimg.com/content/dam/images/food/fullset/2017/12/10/0/WU1712H_Cauliflower-Mac-and-Cheese_s4x3.jpg.rend.hgtvcom.616.462.suffix/1580140849133.jpeg" alt="Sample image for first version of blog listing">
                                 <a>
                                     <mdb-mask waves overlay="white-slight" /></a>
                             </mdb-view>
@@ -49,16 +48,18 @@
                         <mdb-col md="7" class="text-md-left ml-3 mt-3">
                             <a href="#!" class="green-text">
                                 <h6 class="h6 pb-1">
-                                    <mdb-icon icon="desktop" class="pr-1" />Trendyrecipe</h6>
+                                    <mdb-icon icon="desktop" class="pr-1" /><span class="proj-name">Trendyrecipe</span></h6>
                             </a>
-                            <h4 class="h4 mb-4">This is title of the news</h4>
-                            <p class="font-weight-normal">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque, totam
-                                rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
-                                dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur.</p>
-                            <p class="font-weight-normal">by <a><strong>Carine Fox</strong></a>, 19/08/2016</p>
+                            <p class="font-weight-normal">A single page app (SPA) that boasts hundreds of recipes and provides users
+                                with easy ways to cook. The app uses the Spoonacular API for recipes and nutrition data. It uses a "what's in your fridge" API endpoint, allowing users to find recipes they can cook with the ingredients they have. Using an artificial intelligence based calculator, the app uses Natural Language Processing to estimate calories burned for various exercises.</p>
+                            <p class="font-weight-normal">
+                                <span class="proj1-tech">Technologies:</span></p>
+                            <p class="font-weight-normal">HTML, CSS, JavaScript, and Vue.js, and Material Design for Bootstrap</p>
+                            <div class="proj-btns">
+                                <mdb-btn color="success"><a class="proj-link" href="https://trendyrecipe.netlify.app/" target="_blank">View Live</a></mdb-btn>
+                                <mdb-btn color="success"><a class="proj-link" href="https://github.com/pnyamuda/trendyrecipe" target="_blank">See Code</a></mdb-btn>
+                            </div>
 
-                            <mdb-btn color="success">View Live</mdb-btn>
-                            <mdb-btn color="success">See Code</mdb-btn>
                         </mdb-col>
                     </mdb-row>
                 </mdb-jumbotron>
@@ -219,6 +220,25 @@
 </script>
 
 <style scoped>
+    .proj-link {
+        color: #ffffff;
+    }
+    .proj-btns {
+        display: flex;
+        flex-direction:column;
+        width: 60%;
+        justify-content: space-evenly;
+        margin: auto
+    }
+
+    .proj-name {
+        font-size: 1.5rem;
+    }
+
+    .proj1-tech {
+        font-weight: bold;
+    }
+
     #img-circle {
         margin: auto;
         position: relative;
@@ -298,16 +318,35 @@
         position: relative;
         top: 10rem;
     }
+
     .email {
         display: flex;
         flex-direction: row;
-        justify-content:center;
+        justify-content: center;
         width: 100%;
         position: relative;
         top: 1rem;
     }
+
     .email p {
         margin: 1rem;
+    }
+
+    @media (min-width:768px) {
+        #intro-text {
+            width: 70%;
+            margin: auto;
+            text-align: center;
+            position: relative;
+            margin-bottom: 1rem;
+        }
+
+        .proj-btns {
+            flex-direction: row;
+            width: 100%;
+            justify-content: space-evenly;
+        }
+
     }
 
 </style>
