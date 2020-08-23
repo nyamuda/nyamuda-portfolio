@@ -40,7 +40,7 @@
                 <mdb-jumbotron class="text-center hoverable">
                     <mdb-row>
                         <mdb-col md="4" offsetMd="1" class="m-3">
-                            <mdb-view src="https://food.fnr.sndimg.com/content/dam/images/food/fullset/2017/12/10/0/WU1712H_Cauliflower-Mac-and-Cheese_s4x3.jpg.rend.hgtvcom.616.462.suffix/1580140849133.jpeg" alt="Sample image for first version of blog listing">
+                            <mdb-view src="https://github.com/pnyamuda/nyamuda-portfolio/blob/master/src/assets/IMG_20200823_155151.jpg?raw=true" alt="Sample image for first version of blog listing">
                                 <a>
                                     <mdb-mask waves overlay="white-slight" /></a>
                             </mdb-view>
