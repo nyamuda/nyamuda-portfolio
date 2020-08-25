@@ -40,7 +40,7 @@
                 <mdb-jumbotron class="text-center hoverable">
                     <mdb-row>
                         <mdb-col md="4" offsetMd="1" class="m-3">
-                            <mdb-view src="https://github.com/pnyamuda/nyamuda-portfolio/blob/master/src/assets/IMG_20200823_155151.jpg?raw=true" alt="Sample image for first version of blog listing">
+                            <mdb-view src="https://github.com/pnyamuda/nyamuda-portfolio/blob/master/src/assets/IMG_20200823_161523.jpg?raw=true" alt="Sample image for first version of blog listing">
                                 <a>
                                     <mdb-mask waves overlay="white-slight" /></a>
                             </mdb-view>
@@ -48,10 +48,10 @@
                         <mdb-col md="7" class="text-md-left ml-3 mt-3">
                             <a href="#!" class="green-text">
                                 <h6 class="h6 pb-1">
-                                    <mdb-icon icon="desktop" class="pr-1" /><span class="proj-name">Trendyrecipe</span></h6>
+                                    <mdb-icon icon="" class="pr-1" /><span class="proj-name">Trendyrecipe</span></h6>
                             </a>
                             <p class="font-weight-normal">A single page app (SPA) that boasts hundreds of recipes and provides users
-                                with easy ways to cook. The app uses the Spoonacular API for recipes and nutrition data. It uses a "what's in your fridge" API endpoint, allowing users to find recipes they can cook with the ingredients they have. Using an artificial intelligence based calculator, the app uses Natural Language Processing to estimate calories burned for various exercises.</p>
+                                with easy ways to cook. The app uses the Spoonacular API for recipes and nutrition data. It uses a "what's in your fridge" API endpoint, allowing users to find recipes they can cook with the ingredients they have. Using an artificial intelligence based calculator, the app also uses Natural Language Processing to estimate calories burned for various exercises.</p>
                             <p class="font-weight-normal">
                                 <span class="proj1-tech">Technologies:</span></p>
                             <p class="font-weight-normal">HTML, CSS, JavaScript, and Vue.js, and Material Design for Bootstrap</p>
@@ -76,23 +76,22 @@
                         <mdb-col lg="7">
                             <a class="pink-text">
                                 <h6 class="font-weight-bold mb-3">
-                                    <mdb-icon icon="desktop" class="pr-2" />Mywordinfo
+                                    <mdb-icon icon="" class="pr-2" /><span class="proj-name">Mywordinfo</span>
                                 </h6>
                             </a>
-                            <h3 class="font-weight-bold mb-3 p-0">
-                                <strong>Title of the news</strong>
-                            </h3>
-                            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti
-                                quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p>
-                            <p>by
-                                <a>
-                                    <strong>Carine Fox</strong>
-                                </a>, 14/08/2018</p>
-                            <mdb-btn color="pink" size="md" class="mb-lg-0 mb-4 waves-light">Read more</mdb-btn>
+                            <p>A web app that provides a great and detailed explanation of the
+                                meaning of any word and high quality images related to the word. It also uses the Wordnik API to provide the word of the day.It also uses the Wordnik API to provide the word of the day. The app was developed from scratch using only HTML, CSS and vanilla JavaScript.</p>
+                            <p><span class="proj1-tech">Technologies:</span></p>
+                            <p class="font-weight-normal">Pixabay API, Words API, Wordnik API, HTML, CSS, and Vanilla JavaScript</p>
+                            <div class="proj-btns">
+                                <mdb-btn color="pink"><a class="proj-link" href="https://pnyamuda.github.io/mywordinfo/" target="_blank">View Live</a></mdb-btn>
+                                <mdb-btn color="pink"><a class="proj-link" href="https://github.com/pnyamuda/mywordinfo/tree/gh-pages" target="_blank">See Code</a></mdb-btn>
+                            </div>
+
                         </mdb-col>
                         <mdb-col lg="5">
                             <mdb-view class="rounded z-depth-2 mb-lg-0 mb-4" hover>
-                                <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Others/img%20(34).jpg" alt="Sample image" />
+                                <img class="img-fluid" src="../assets/wordinfo1.jpg" alt="Sample image" />
                                 <a>
                                     <mdb-mask overlay="white-slight" waves />
                                 </a>
@@ -114,20 +113,19 @@
         <div class="skill-container">
 
             <div class="my-skills">
-                <ul>
-                    <li>JavaScript(ES6+)</li>
-                    <li>CSS3</li>
-                    <li>HTML5</li>
-                    <li>Vue.js</li>
-                </ul>
+
+                <p>JavaScript(ES6+)</p>
+                <p>CSS3</p>
+                <p>HTML5</p>
+                <p>Vue.js</p>
+
             </div>
             <div class="my-skills">
-                <ul>
-                    <li>Git and GitHub</li>
-                    <li>jQuery</li>
-                    <li>Restful API's</li>
-                    <li>NPM</li>
-                </ul>
+
+                <p>Git and GitHub</p>
+                <p>jQuery</p>
+                <p>Restful API's</p>
+                <p>NPM</p>
             </div>
 
 
@@ -135,24 +133,28 @@
 
         <div id="contact">
 
-            <mdb-container>
-                <mdb-jumbotron class="text-center hoverable">
-                    <form>
-                        <p class="h4 text-center mb-4">Get in Touch</p>
-                        <div class="grey-text">
-                            <mdb-input label="Your name" icon="user" group type="text" validate error="wrong" success="right" />
-                            <mdb-input label="Your email" icon="envelope" group type="email" validate error="wrong" success="right" />
-                            <mdb-input label="Subject" icon="tag" group type="text" validate error="wrong" success="right" />
-                            <mdb-textarea :rows="2" label="Your message" icon="pencil" />
-                        </div>
-                        <div class="text-center">
-                            <mdb-btn outline="secondary">Send
-                                <mdb-icon far icon="paper-plane" class="ml-1" />
-                            </mdb-btn>
-                        </div>
-                    </form>
-                </mdb-jumbotron>
-            </mdb-container>
+            <div class="form-block">
+                <mdb-container>
+                    <mdb-jumbotron class="text-center hoverable">
+                        <form>
+                            <p class="h4 text-center mb-4">Get in Touch</p>
+                            <div class="grey-text">
+                                <mdb-input label="Your name" icon="user" group type="text" vapdate error="wrong" success="right" />
+                                <mdb-input label="Your email" icon="envelope" group type="email" vapdate error="wrong" success="right" />
+                                <mdb-input label="Subject" icon="tag" group type="text" vapdate error="wrong" success="right" />
+                                <mdb-textarea :rows="2" label="Your message" icon="pencil" />
+                            </div>
+                            <div class="text-center">
+                                <mdb-btn outpne="secondary">Send
+                                    <mdb-icon far icon="paper-plane" class="ml-1" />
+                                </mdb-btn>
+                            </div>
+                        </form>
+                    </mdb-jumbotron>
+                </mdb-container>
+
+
+            </div>
 
             <div class="email">
                 <p>ptnrlab@gmail.com</p>
@@ -192,6 +194,7 @@
         mdbMask,
         mdbIcon,
         mdbInput,
+         mdbTextarea,
     } from 'mdbvue';
     export default {
         name: 'CardProPage',
@@ -214,6 +217,7 @@
             mdbMask,
             mdbIcon,
             mdbInput,
+             mdbTextarea,
         }
     }
 
@@ -223,9 +227,10 @@
     .proj-link {
         color: #ffffff;
     }
+
     .proj-btns {
         display: flex;
-        flex-direction:column;
+        flex-direction: column;
         width: 60%;
         justify-content: space-evenly;
         margin: auto
@@ -298,25 +303,32 @@
         top: 2rem;
     }
 
-    .my-skills {
-        list-style: none;
-    }
+    .my-skills {}
 
     .skill-container {
         display: flex;
         flex-direction: row;
-        flex-wrap: wrap;
-        width: 60%;
-        justify-content: space-around;
+        width: 90%;
+        justify-content: space-evenly;
         position: relative;
         top: 5rem;
         margin: auto;
-
+    }
+    .form-block {
+        width: 100%;
+        margin: auto;
+        position: relative;
     }
 
     #contact {
         position: relative;
         top: 10rem;
+        width: 100%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
     }
 
     .email {
@@ -325,7 +337,7 @@
         justify-content: center;
         width: 100%;
         position: relative;
-        top: 1rem;
+        top: 3rem;
     }
 
     .email p {
@@ -345,6 +357,13 @@
             flex-direction: row;
             width: 100%;
             justify-content: space-evenly;
+        }
+
+        .skill-container {
+            width: 50%;
+        }
+        #contact {
+            width: 70%;
         }
 
     }
