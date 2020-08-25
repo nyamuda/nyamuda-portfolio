@@ -135,22 +135,22 @@
 
             <div class="form-block">
                 <mdb-container>
-                    <mdb-jumbotron class="text-center hoverable">
-                        <form>
-                            <p class="h4 text-center mb-4">Get in Touch</p>
-                            <div class="grey-text">
-                                <mdb-input label="Your name" icon="user" group type="text" vapdate error="wrong" success="right" />
-                                <mdb-input label="Your email" icon="envelope" group type="email" vapdate error="wrong" success="right" />
-                                <mdb-input label="Subject" icon="tag" group type="text" vapdate error="wrong" success="right" />
-                                <mdb-textarea :rows="2" label="Your message" icon="pencil" />
-                            </div>
-                            <div class="text-center">
-                                <mdb-btn outpne="secondary">Send
-                                    <mdb-icon far icon="paper-plane" class="ml-1" />
-                                </mdb-btn>
-                            </div>
-                        </form>
-                    </mdb-jumbotron>
+
+                    <form>
+                        <p class="h4 text-center mb-4">Get in Touch</p>
+                        <div class="grey-text">
+                            <mdb-input label="Your name" icon="user" group type="text" vapdate error="wrong" success="right" v-model="name" />
+                            <mdb-input label="Your email" icon="envelope" group type="email" vapdate error="wrong" success="right" v-model="email" />
+                            <mdb-input label="Subject" icon="tag" group type="text" vapdate error="wrong" success="right" v-model="subject" />
+                            <mdb-textarea :rows="2" label="Your message" icon="pencil" v-model="message" />
+                        </div>
+                        <div class="text-center">
+                            <mdb-btn @click.native="modal = true" outpne="secondary" @click="sendMessage">Send
+                                <mdb-icon far icon="paper-plane" class="ml-1" />
+                            </mdb-btn>
+                        </div>
+                    </form>
+
                 </mdb-container>
 
 
@@ -164,6 +164,17 @@
 
 
 
+        </div>
+
+        <div>
+            <!-- Frame Modal Bottom -->
+           
+            <mdb-modal frame position="bottom" direction="bottom" :show="modal" @close="modal = false">
+                <mdb-modal-body class="text-center">
+                    <span>Thank you {{name}} for reaching out to me. Will contact you back as soon possible</span>
+                    <mdb-btn color="secondary" @click.native="modal = false">Close</mdb-btn>
+                </mdb-modal-body>
+            </mdb-modal>
         </div>
 
 
@@ -194,7 +205,10 @@
         mdbMask,
         mdbIcon,
         mdbInput,
-         mdbTextarea,
+        mdbTextarea,
+        mdbJumbotron,
+        mdbModal,
+        mdbModalBody,
     } from 'mdbvue';
     export default {
         name: 'CardProPage',
@@ -217,7 +231,70 @@
             mdbMask,
             mdbIcon,
             mdbInput,
-             mdbTextarea,
+            mdbTextarea,
+            mdbJumbotron,
+            mdbModal,
+            mdbModalBody,
+        },
+        data() {
+            return {
+                name: "",
+                email: "",
+                subject: "",
+                message: "",
+                modal: false,
+
+            }
+        },
+        methods: {
+            sendMessage() {
+                var myHeaders = new Headers();
+                myHeaders.append("x-rapidapi-host", "rapidprod-sendgrid-v1.p.rapidapi.com");
+                myHeaders.append("x-rapidapi-key", "3dbcf6ea40mshbabf32ffef2d4b0p12d39djsn516819e7e052");
+                myHeaders.append("content-type", "application/json");
+                myHeaders.append("accept", "application/json");
+
+                var raw = JSON.stringify({
+                    "personalizations": [{
+                        "to": [{
+                            "email": "ptnrlab@gmail.com"
+                        }],
+                        "subject": this.subject
+                    }],
+                    "from": {
+                        "email": this.email
+                    },
+                    "content": [{
+                        "type": "text/plain",
+                        "value": `Hi my name is ${this.name}. ${this.message}`
+                    }]
+                });
+
+                var requestOptions = {
+                    method: 'POST',
+                    headers: myHeaders,
+                    body: raw,
+                    redirect: 'follow'
+                };
+
+                fetch("https://cors-anywhere.herokuapp.com/https://rapidprod-sendgrid-v1.p.rapidapi.com/mail/send", requestOptions)
+                    .then(response => response.text())
+                    .then(result => {
+                        this.thankSender();
+                        this.name = "";
+                        this.subject = "";
+                        this.email = "";
+                        this.message = "";
+                        console.log(result)
+                    })
+                    .catch(error => console.log('error', error));
+
+
+            },
+            thankSender() {
+                this.modal = true;
+            }
+
         }
     }
 
@@ -314,6 +391,7 @@
         top: 5rem;
         margin: auto;
     }
+
     .form-block {
         width: 100%;
         margin: auto;
@@ -362,8 +440,9 @@
         .skill-container {
             width: 50%;
         }
+
         #contact {
-            width: 70%;
+            width: 50%;
         }
 
     }
