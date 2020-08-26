@@ -20,12 +20,11 @@
                             <p>Front End Developer</p>
                         </h5>
                         <mdb-card-text id="intro-text">I'm looking for a team that allows me to constantly get outside my comfort zone. The Front End part of web development is where I've spent the bulk of my time learning, but I'm always excited to learn new technologies</mdb-card-text>
-                        <a class="px-2 fa-lg li-ic">
+                        <a href="https://www.linkedin.com/in/piercenyamuda/" class="px-2 fa-lg li-ic git-linked" target="_blank">
                             <mdb-icon fab icon="linkedin" /></a>
-                        <a class="px-2 fa-lg tw-ic">
-                            <mdb-icon fab icon="twitter" /></a>
-                        <a class="px-2 fa-lg fb-ic">
-                            <mdb-icon fab icon="facebook" /></a>
+
+                        <a href="https://github.com/pnyamuda?tab=repositories" class="px-2 fa-lg fb-ic git-linked" target="_blank">
+                            <mdb-icon fab icon="github" /></a>
                     </mdb-card-body>
                 </mdb-card>
             </mdb-row>
@@ -328,6 +327,21 @@
 </script>
 
 <style scoped>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+    #intro-text {
+        width: 90%;
+        margin: auto;
+        text-align: center;
+        position: relative;
+        margin-bottom: 1rem;
+        color: #000000;
+        font-size: 1rem;
+    }
+
+    .git-linked {
+        font-size: 1.5rem;
+    }
+
     .proj-link {
         color: #ffffff;
     }
@@ -361,6 +375,8 @@
     #profile-container {
         position: relative;
         top: 1rem;
+        font-family: 'Roboto', sans-serif;
+        
     }
 
     #my-name p {
@@ -452,10 +468,7 @@
     @media (min-width:768px) {
         #intro-text {
             width: 70%;
-            margin: auto;
-            text-align: center;
-            position: relative;
-            margin-bottom: 1rem;
+
         }
 
         .proj-btns {
