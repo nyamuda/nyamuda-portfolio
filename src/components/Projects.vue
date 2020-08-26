@@ -136,16 +136,16 @@
             <div class="form-block">
                 <mdb-container>
 
-                    <form>
+                    <form @submit.prevent="checkForm">
                         <p class="h4 text-center mb-4">Get in Touch</p>
                         <div class="grey-text">
-                            <mdb-input label="Your name" icon="user" group type="text" vapdate error="wrong" success="right" v-model="name" />
-                            <mdb-input label="Your email" icon="envelope" group type="email" vapdate error="wrong" success="right" v-model="email" />
-                            <mdb-input label="Subject" icon="tag" group type="text" vapdate error="wrong" success="right" v-model="subject" />
-                            <mdb-textarea :rows="2" label="Your message" icon="pencil" v-model="message" />
+                            <mdb-input label="Your name" icon="user" group type="text" vapdate error="wrong" success="right" v-model="name" required invalidFeedback="Please enter you name" />
+                            <mdb-input required label="Your email" icon="envelope" group type="email" vapdate error="wrong" success="right" v-model="email" invalidFeedback="Please enter a valid email address" />
+                            <mdb-input required label="Subject" icon="tag" group type="text" vapdate error="wrong" success="right" v-model="subject" invalidFeedback="Please enter the subject" />
+                            <mdb-textarea required :rows="2" label="Your message" icon="pencil" v-model="message" />
                         </div>
                         <div class="text-center">
-                            <mdb-btn @click.native="modal = true" outpne="secondary" @click="sendMessage">Send
+                            <mdb-btn type="submit" outpne="secondary">Send
                                 <mdb-icon far icon="paper-plane" class="ml-1" />
                             </mdb-btn>
                         </div>
@@ -166,16 +166,27 @@
 
         </div>
 
-        <div>
-            <!-- Frame Modal Bottom -->
-           
+        <div v-show="messageSent">
+            <!-- Frame Modal Bottom if the message was successfully sent-->
+
             <mdb-modal frame position="bottom" direction="bottom" :show="modal" @close="modal = false">
                 <mdb-modal-body class="text-center">
                     <span>Thank you {{name}} for reaching out to me. Will contact you back as soon possible</span>
-                    <mdb-btn color="secondary" @click.native="modal = false">Close</mdb-btn>
+                    <mdb-btn color="success" @click.native="modal = false" @click="removeInfo">Close</mdb-btn>
                 </mdb-modal-body>
             </mdb-modal>
         </div>
+        <div v-show="messageNotSent">
+            <!-- Frame Modal Bottom if the message was not sent-->
+
+            <mdb-modal frame position="bottom" direction="bottom" :show="modal" @close="modal = false">
+                <mdb-modal-body class="text-center">
+                    <span>Message not sent. Please try calling or using an email service like gmail.</span>
+                    <mdb-btn color="success" @click.native="modal = false" @click="removeInfo">Close</mdb-btn>
+                </mdb-modal-body>
+            </mdb-modal>
+        </div>
+
 
 
 
@@ -243,6 +254,8 @@
                 subject: "",
                 message: "",
                 modal: false,
+                messageSent: false,
+                messageNotSent: false
 
             }
         },
@@ -280,19 +293,33 @@
                 fetch("https://cors-anywhere.herokuapp.com/https://rapidprod-sendgrid-v1.p.rapidapi.com/mail/send", requestOptions)
                     .then(response => response.text())
                     .then(result => {
-                        this.thankSender();
-                        this.name = "";
-                        this.subject = "";
-                        this.email = "";
-                        this.message = "";
-                        console.log(result)
+                        console.log(result);
+                        this.messageSent = true;
+                        this.modal = true;
+
+
                     })
-                    .catch(error => console.log('error', error));
+                    .catch(error => {
+                        console.log('error', error);
+                        this.messageNotSent = true;
+                        this.modal = true;
+                    });
 
 
             },
-            thankSender() {
-                this.modal = true;
+
+            checkForm(event) {
+                event.target.classList.add('was-validated');
+                this.sendMessage();
+                event.target.classList.remove('was-validated');
+            },
+            removeInfo() {
+                this.name = "";
+                this.subject = "";
+                this.email = "";
+                this.message = "";
+                this.messageNotSent = false;
+                this.messageNotSent = false;
             }
 
         }
