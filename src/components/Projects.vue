@@ -17,9 +17,9 @@
                             <p>Pierce Nyamuda</p>
                         </mdb-card-title>
                         <h5 class="indigo-text" id="job-title">
-                            <p>Front End Developer</p>
+                            <p>Full-Stack Web Developer</p>
                         </h5>
-                        <mdb-card-text id="intro-text">I'm looking for a team that allows me to constantly get outside my comfort zone. The Front End part of web development is where I've spent the bulk of my time learning, but I'm always excited to learn new technologies</mdb-card-text>
+                        <mdb-card-text id="intro-text">A web developer with a solid background in programming, living in Cape Town, South Africa.</mdb-card-text>
                         <a href="https://www.linkedin.com/in/piercenyamuda/" class="px-2 fa-lg li-ic git-linked" target="_blank">
                             <mdb-icon fab icon="linkedin" /></a>
 
@@ -64,9 +64,46 @@
                 </mdb-jumbotron>
             </mdb-container>
 
+        </div>
 
+
+ <div class="proj1">
+            <mdb-container>
+                <mdb-jumbotron class="text-center hoverable">
+                    <mdb-row>
+                        <mdb-col md="4" offsetMd="1" class="m-3">
+                            <mdb-view src="https://github.com/pnyamuda/nyamuda-portfolio/blob/master/src/assets/IMG_20201203_151616.png?raw=true" alt="Sample image for first version of blog listing">
+                                <a>
+                                    <mdb-mask waves overlay="white-slight" /></a>
+                            </mdb-view>
+                        </mdb-col>
+                        <mdb-col md="7" class="text-md-left ml-3 mt-3">
+                            <a href="#!" class="green-text">
+                                <h6 class="h6 pb-1">
+                                    <mdb-icon icon="" class="pr-1" /><span class="proj-name">UserList</span></h6>
+                            </a>
+                            <p class="font-weight-normal">A simple app built to showcase my Laravel and PHP skills. The app is a listing page of users showing the full name, email address, phone number and
+an “Edit” button for each user in the database. When adding a new user, a modal with a form opens and the form has the appropriate backend
+validation. The app was developed using MySQL database and on the server, the PostgreSQL database was used.</p>
+                            <p class="font-weight-normal">
+                                <span class="proj1-tech">Technologies:</span></p>
+                            <p class="font-weight-normal">Laravel, PHP, MySQL, jQuery, and Bootstrap</p>
+                            <div class="proj-btns">
+                                <mdb-btn color="success"><a class="proj-link" href="https://nyamudausers.herokuapp.com/" target="_blank">View Live</a></mdb-btn>
+                                <mdb-btn color="success"><a class="proj-link" href="https://github.com/pnyamuda/laravel-project/tree/master" target="_blank">See Code</a></mdb-btn>
+                            </div>
+
+                        </mdb-col>
+                    </mdb-row>
+                </mdb-jumbotron>
+            </mdb-container>
 
         </div>
+
+
+
+
+
 
         <div class="proj1">
             <mdb-container>
@@ -99,10 +136,12 @@
                     </mdb-row>
                 </mdb-jumbotron>
             </mdb-container>
-
-
-
         </div>
+
+
+
+
+        
 
 
         <div id="skills-title">
@@ -114,9 +153,11 @@
             <div class="my-skills">
 
                 <p>JavaScript(ES6+)</p>
-                <p>CSS3</p>
-                <p>HTML5</p>
+                <p>MySQL</p>
+                <p>PHP</p>
+                <p>Laravel</p>
                 <p>Vue.js</p>
+                <p>WordPress</p>
 
             </div>
             <div class="my-skills">
@@ -125,6 +166,8 @@
                 <p>jQuery</p>
                 <p>Restful API's</p>
                 <p>NPM</p>
+                <p>CSS3</p>
+                <p>HTML5</p>
             </div>
 
 
