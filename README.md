@@ -1,4 +1,4 @@
-# pierce-portfolio
+# nyamuda-portfolio
 
 ## Project setup
 ```
