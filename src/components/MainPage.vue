@@ -1,7 +1,7 @@
 <template>
   <div id="all-projects">
     <div class="w-full flex flex-col items-center justify-center mt-10">
-      <div class="flex flex-col justify-start px-4">
+      <div class="flex flex-col justify-center md:justify-start">
         <p class="text-4xl py-2">
           Hello, I'm <span class="text-green-600">Pierce Nyamuda.</span>
         </p>
